@@ -20,12 +20,12 @@ function App() {
   const [transferAddress, setTransferAddress] = useState('');
 
   // コントラクトアドレスを記載
-  const daiTokenAddress = '0x17C60018E9616Ec096A752CC79E65B4957FE0635';
-  const dappTokenAddress = '0x12d1C73Fd2cf34dB8AcCeaB340648AF365974F75';
-  const tokenfarmAddress = '0xf67d953Bf1F7723fB940BF61e9456950f6F84F3c';
+  const daiTokenAddress = '0x81dA528ce16550D8D615B5828C873673411CBA5a';
+  const dappTokenAddress = '0x8404187e3daF0286223f17318813e7fC0BB4fcD7';
+  const tokenfarmAddress = '0x104E63BF9b6A61195322B275fA99366d5422e1Bb';
 
   //ウォレットアドレス(コントラクトの保持者)を記載
-  const walletAddress = '0xD7F73B7d1F6008D668E445004066EA3E0D95074E';
+  const walletAddress = '0x04CD057E4bAD766361348F26E847B546cBBc7946';
 
   /* ABIの内容を参照する変数を作成 */
   const daiTokenABI = daiAbi.abi;
@@ -42,12 +42,9 @@ function App() {
     return n / 10 ** 18;
   }
 
-  const BigNumber = require('bignumber.js');
-
   // WEIに変換する関数
   function convertToWei(n) {
-    let Big = new BigNumber(n * 10 ** 18);
-    return Big.toFixed();
+    return n * 10 ** 18;
   }
 
   // 各トークンの残高を取得する関数
